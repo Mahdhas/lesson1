@@ -20,10 +20,14 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=index}/{id?}");
-app.MapControllerRoute(    "test",     "{controller=Home}/{action=privacy}/{name:maxlength(2)}/Page{id}");
 
+app.MapControllerRoute("test","{Area:Exists}/{controller=Home}/{action=privacy}/{id?}");
+//app.MapControllerRoute("test", "{Area:Exists}/{controller=Home}/{action=privacy}/{id?}/{name}");
+
+////app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{Area=Admin}/{controller=Category}/{action=create}/{id?}");
+
+app.MapControllerRoute("test1", "{controller=Home}/{action=privacy}/{id?}");
 
 app.Run();

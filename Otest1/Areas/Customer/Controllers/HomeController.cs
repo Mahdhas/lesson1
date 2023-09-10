@@ -2,9 +2,9 @@
 using Otest1.Models;
 using System.Diagnostics;
 
-namespace Otest1.Controllers
+namespace Otest1.Areas.AdCustomermin.Controllers
 {
-    
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -28,9 +28,9 @@ namespace Otest1.Controllers
 
             return Content("<h1>"+ DateTime.Today.ToShortDateString() +"</h1>","text/html");
         }
-        public ContentResult  Privacy(string? name, int? id)
+        public string Privacy(string name, int id)
         {
-            return Content ($"<h2> Privacy action {name} is {id} </h2>");
+            return $"Privacy action {name} is {id} ";
         }
 
         public IActionResult generateList()

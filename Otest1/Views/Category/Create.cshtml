@@ -1,0 +1,44 @@
+﻿
+<html>
+
+    <head>
+
+    </head>
+    <body>
+        <h2> Log In Form</h2>
+
+        <textarea>
+@{
+            @ViewBag.name;
+            @ViewBag.age;
+            @ViewBag.address;
+        }
+        </textarea>
+
+
+        <form asp-action="create" asp-controller="Category" method="post">
+            <header> <div><label >Name</label> 
+                <input  name="name" value="Mahd" /> </div> </header>
+        <div>
+            <label>Address </label>
+            <input type="text" name="address" class="text-info" />
+            <h2>
+                <a asp-action="getTest" asp-area="Customer" asp-controller="Category" asp-route-id="20" asp-route-name="Name"> Customer Area - Category</a>
+            </h2>
+        </div>
+        <div>
+            <label>Age </label>
+            <input type="number" name="Age" class="text-info" />
+
+        </div>
+        <div>
+            <input type="submit" class="btn btn-info" />
+          
+
+        </div>
+        </form>
+
+    </body>
+
+
+</html>
